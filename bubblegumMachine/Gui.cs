@@ -11,7 +11,8 @@ namespace bubblegumMachine
             RenderAscii();
 
             Console.WriteLine("1. withdraw a gum");
-            Console.WriteLine("2. exit");
+            Console.WriteLine("2. show gum count");
+            Console.WriteLine("3. exit");
 
         }
 

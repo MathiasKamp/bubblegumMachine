@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq.Expressions;
 
 namespace bubblegumMachine
@@ -13,34 +14,34 @@ namespace bubblegumMachine
         Bubblegum strawberry = new Bubblegum("Strawberry", "Red");
         Bubblegum apple = new Bubblegum("Apple", "Green");
 
-        public ArrayList Bubblegum = new ArrayList();
+        public List<Bubblegum> Bubblegum = new List<Bubblegum>();
 
-        private int blueberryFill = 14;
-        private int blackberryFill = 7;
-        private int tuttifruttiFill = 11;
-        private int orangeFill = 10;
-        private int strawberryFill = 7;
-        private int appleFill = 6;
-        static Random rand = new Random();
-        
-        
-        
+        private int blueberryAmount = 14;
+        private int blackberryAmount = 7;
+        private int tuttifruttiAmount = 11;
+        private int orangeAmount = 10;
+        private int strawberryAmount = 7;
+        private int appleAmount = 6;
 
-        // det er denne metode som skal trække et random stykke tyggegummi 
-        public void DrawRandomGum()
-        {
-            int drawGum = rand.Next(0, Bubblegum.Count);
-
-            var gum = Bubblegum[drawGum];
-            Bubblegum.Remove(drawGum);
+        Random rand = new Random();
+        private int count = 55;
+        public Bubblegum DrawRandomGum()
+        {   
+            int drawGum = rand.Next(0, count);
+            Bubblegum gum = Bubblegum[drawGum];
+            Bubblegum.RemoveAt(drawGum);
+            count--;
+            return gum;
             
         }
 
-        public void PrintDrawRandom()
+        public int CountBubblegum()
         {
+            int count = Bubblegum.Count;
+            return count;
 
         }
-
+        
         public void FillDispenser()
         {
             FillBlueberry();
@@ -51,19 +52,10 @@ namespace bubblegumMachine
             FillApple();
         }
 
-        public void PrintBubblegum()
-        {
-            foreach (Bubblegum BubbleGum in Bubblegum)
-            {
-                Console.WriteLine($"{BubbleGum.Name}");
-            }
-        }
 
-
-        
         public void FillBlueberry()
         {
-            for (int i = 0; i < blueberryFill; i++)
+            for (int i = 0; i < blueberryAmount; i++)
             {
                 Bubblegum.Add(blueberry);
             }
@@ -71,7 +63,7 @@ namespace bubblegumMachine
 
         public void FillBlackberry()
         {
-            for (int i = 0; i < blackberryFill; i++)
+            for (int i = 0; i < blackberryAmount; i++)
             {
                 Bubblegum.Add(blackberry);
             }
@@ -79,7 +71,7 @@ namespace bubblegumMachine
 
         public void FillTuttifrutti()
         {
-            for (int i = 0; i < tuttifruttiFill; i++)
+            for (int i = 0; i < tuttifruttiAmount; i++)
             {
                 Bubblegum.Add(tuttifrutti);
             }
@@ -87,7 +79,7 @@ namespace bubblegumMachine
 
         public void FillOrange()
         {
-            for (int i = 0; i < orangeFill; i++)
+            for (int i = 0; i < orangeAmount; i++)
             {
                 Bubblegum.Add(orange);
             }
@@ -95,7 +87,7 @@ namespace bubblegumMachine
 
         public void FillStrawberry()
         {
-            for (int i = 0; i < strawberryFill; i++)
+            for (int i = 0; i < strawberryAmount; i++)
             {
                 Bubblegum.Add(strawberry);
             }
@@ -103,7 +95,7 @@ namespace bubblegumMachine
 
         public void FillApple()
         {
-            for (int i = 0; i < appleFill; i++)
+            for (int i = 0; i < appleAmount; i++)
             {
                 Bubblegum.Add(apple);
             }
