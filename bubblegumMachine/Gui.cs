@@ -2,8 +2,12 @@
 
 namespace bubblegumMachine
 {
+    /// <summary>
+    /// denne klasse består af 2 gui metoder
+    /// </summary>
     class Gui
     {
+        // denne metode kalder renderascii metoden og udskriver en menu
         public void RenderMenu()
         {
             Console.ForegroundColor = ConsoleColor.Green;
@@ -16,6 +20,7 @@ namespace bubblegumMachine
 
         }
 
+        // denne metoder uskriver bubblegum machine i ascii art
         public void RenderAscii()
         {
             
